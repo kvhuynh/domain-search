@@ -9,15 +9,21 @@ class PFAMSearcher:
         self.output_dir = output_dir;
 
     def run_all_searches(self) -> None:
-        paths_to_hmm = [];
-        hmm_path = Path(self.hmm_dir)
+        hmm_path = Path(self.hmm_dir);
+        pfam_name = hmm_file.parent.name
         for folder in hmm_path.iterdir():
+            output_path = self.raw_dir/pfam_name
             for file in folder.iterdir():
-                if file.suffix == ".hmm":
+                # check if the output file for the hmmsearch is already there
+                # otherwise make it
+                # if it exists then continue
+                if ()
+                _run_hmmsearch();
                     
                     
         
     
     def _run_hmmsearch():
+        
         pass
 
