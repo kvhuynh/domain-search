@@ -11,5 +11,8 @@ class DirectoryManager:
     def setup(self) -> None:
         for name, path in self.dirs.items():
             path.mkdir(parents=True, exist_ok=True);
+    
+    def check_output_dir(self) -> None:
+        pass;
         
         

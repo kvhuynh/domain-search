@@ -10,16 +10,18 @@ class PFAMSearcher:
 
     def run_all_searches(self) -> None:
         hmm_path = Path(self.hmm_dir);
-        pfam_name = hmm_file.parent.name
+        pfam_name = hmm_path.parent.name
         for folder in hmm_path.iterdir():
-            output_path = self.raw_dir/pfam_name
+            # output_path = self.raw_dir/pfam_name;
+            print(folder);
+            
             for file in folder.iterdir():
                 # check if the output file for the hmmsearch is already there
                 # otherwise make it
                 # if it exists then continue
-                if ()
-                _run_hmmsearch();
-                    
+                # if ()
+                # _run_hmmsearch();
+                pass;
                     
         
     
