@@ -1,0 +1,28 @@
+#                                                                                      --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                               accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#                       ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+EP00071_Canis_lupus_P000240                 -          IFN-gamma            PF00714.22   1.3e-67  236.4   4.5   1.5e-67  236.1   4.5   1.0   1   0   0   1   1   1   1 NP_001003174.1 interferon gamma precursor [Canis lupus familiaris]
+EP00070_Physeter_catodon_P003012            -          IFN-gamma            PF00714.22   1.5e-67  236.1   2.9   1.8e-67  235.9   2.9   1.0   1   0   0   1   1   1   1 XP_007106317.1 interferon gamma [Physeter catodon]
+EP00069_Balaena_mysticetus_P022445          -          IFN-gamma            PF00714.22   4.5e-67  234.6   2.3   5.4e-67  234.3   2.3   1.0   1   0   0   1   1   1   1 bmy_14385T0
+EP00074_Homo_sapiens_P000580                -          IFN-gamma            PF00714.22   6.2e-64  224.4   3.7   7.9e-64  224.1   3.7   1.0   1   0   0   1   1   1   1 NP_000610.2 interferon gamma precursor [Homo sapiens]
+EP00073_Rattus_norvegicus_P016411           -          IFN-gamma            PF00714.22   3.7e-57  202.4   2.9   4.4e-57  202.2   2.9   1.0   1   0   0   1   1   1   1 NP_620235.1 interferon gamma precursor [Rattus norvegicus]
+EP00072_Mus_musculus_P013232                -          IFN-gamma            PF00714.22   1.3e-51  184.4   2.6   1.6e-51  184.2   2.6   1.0   1   0   0   1   1   1   1 NP_032363.1 interferon gamma precursor [Mus musculus]
+EP00077_Pelodiscus_sinensis_P000008         -          IFN-gamma            PF00714.22   6.1e-25   98.1   2.6   6.8e-25   97.9   2.6   1.1   1   0   0   1   1   1   1 NP_001273831.1 interferon gamma precursor [Pelodiscus sinensis]
+EP00076_Gallus_gallus_P005979               -          IFN-gamma            PF00714.22   1.1e-24   97.2   1.0   1.4e-24   96.9   1.0   1.1   1   0   0   1   1   1   1 NP_990480.1 interferon gamma precursor [Gallus gallus]
+EP00075_Anas_platyrhynchos_P000076          -          IFN-gamma            PF00714.22   6.1e-23   91.6   2.2   7.5e-23   91.3   2.2   1.1   1   0   0   1   1   1   1 NP_001297346.1 interferon gamma precursor [Anas platyrhynchos]
+EP00079_Xenopus_tropicalis_P012023          -          IFN-gamma            PF00714.22   1.3e-18   77.6   2.1   1.7e-18   77.2   2.1   1.1   1   0   0   1   1   1   1 XP_002938555.1 PREDICTED: interferon gamma [Xenopus tropicalis]
+EP00062_Callorhinchus_milii_P019181         -          IFN-gamma            PF00714.22   4.7e-14   62.8   0.0     6e-14   62.5   0.0   1.1   1   0   0   1   1   1   1 gi|632973500|ref|XP_007903185.1| PREDICTED: interferon gamma [Callorhinchus milii]
+EP00067_Danio_rerio_P014686                 -          IFN-gamma            PF00714.22   4.6e-11   53.2   1.5   5.8e-11   52.8   1.5   1.1   1   0   0   1   1   1   1 NP_998029.1 interferon gamma 1 precursor [Danio rerio]
+EP00068_Latimeria_chalumnae_P017472         -          IFN-gamma            PF00714.22     9e-07   39.2   1.4     9e-07   39.2   1.4   2.5   1   1   2   3   3   3   1 XP_006012494.1 PREDICTED: uncharacterized protein LOC102358842, partial [Latimeria chalumnae]
+EP00106_Octopus_bimaculoides_P007396        -          IFN-gamma            PF00714.22   4.6e-06   37.0   0.1   2.8e+04    5.3   0.0   7.7   7   0   0   7   7   7   0 XP_014774838.1 PREDICTED: uncharacterized protein LOC106872379 [Octopus bimaculoides]
+EP00063_Salmo_salar_P000035                 -          IFN-gamma            PF00714.22   3.2e-05   34.2   1.4   4.2e-05   33.8   1.4   1.1   1   0   0   1   1   1   1 NP_001117030.1 interferon, gamma precursor [Salmo salar]
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      ./PF00714.hmm
+# Target file:     ../../../TCS_FULL_DB.fasta
+# Option settings: hmmsearch --tblout IFN-gamma_FULL_hmm_search.txt -E 0.001 ./PF00714.hmm ../../../TCS_FULL_DB.fasta 
+# Current dir:     /Users/txjordan/jordan-lab/domain-search/domains_TCS_FULL/IFN/IFN-gamma
+# Date:            Thu Oct 31 11:04:57 2024
+# [ok]
