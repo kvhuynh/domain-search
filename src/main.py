@@ -17,14 +17,16 @@ def main():
 
     args = parser.parse_args();
 
+    dir_manager = DirectoryManager("../output", "../results", "../db", "../pfam_models");
+    dir_manager.setup();
+    
     pipeline = PFAMPipeline(
         hmm_dir=args.hmm_dir,
         fasta_dir=args.fasta_dir,
         results_dir=args.results_dir,
+        dir_manager=dir_manager
     );
 
-    dm = DirectoryManager("../output", "../results", "../db", "../pfam_models");
-    dm.setup();
 
     if args.run_searches:
         pipeline.run_searches();

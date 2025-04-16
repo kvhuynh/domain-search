@@ -12,7 +12,8 @@ class DirectoryManager:
         for name, path in self.dirs.items():
             path.mkdir(parents=True, exist_ok=True);
     
-    def check_output_dir(self) -> None:
-        pass;
+    def output_subdir_exists(self, pfam_name: str) -> bool:
+        return os.path(f"../output/{pfam_name}");
+    
         
         
