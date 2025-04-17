@@ -10,7 +10,7 @@ class PFAMSearcher:
         self.output_dir = output_dir;
         self.dir_manager = dir_manager;
 
-    def run_all_searches(self) -> None:
+    def run_searches(self) -> None:
         hmm_path = Path(self.hmm_dir);
         pfam_name = hmm_path.parent.name
         for folder in hmm_path.iterdir():
@@ -18,8 +18,7 @@ class PFAMSearcher:
             for file in folder.iterdir():
                 if not self._already_searched(pfam_name):
                     self._run_hmmsearch(file, pfam_name);
-                else:
-                    self.dir_manager
+            
                     
     def _already_searched(self, pfam_name: str) -> bool:
         # check "../output/pfam_name"

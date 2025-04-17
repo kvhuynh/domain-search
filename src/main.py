@@ -17,7 +17,8 @@ def main():
 
     args = parser.parse_args();
 
-    dir_manager = DirectoryManager("../output", "../results", "../db", "../pfam_models");
+    # dir_manager = DirectoryManager("../output", "../results", "../db", "../pfam_models");
+    dir_manager = DirectoryManager(Path("../output"), Path("../results"), Path("../db"), Path("../pfam_models"));
     dir_manager.setup();
     
     pipeline = PFAMPipeline(
