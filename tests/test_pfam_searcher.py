@@ -29,10 +29,20 @@ def searcher(tmp_path: Path) -> None:
     db_dir.mkdir();
     pfam_dir.mkdir();
     
-    test_PFAM_CARD = Path("tests/test_data/pfam_models/CARD");
-    for hmm_file in test_PFAM_CARD.glob("*.hmm"):
-        shutil.copy(hmm_file, pfam_dir / hmm_file.name)
+    # !!! REFACTOR BLOCK 
+    test_path = Path("tests/test_data")
+    pfam_sources = ["CARD", "NACHT"]
 
+    for pfam_name in pfam_sources:
+        pfam_source_dir = test_path / "pfam_models" / pfam_name
+        for hmm_file in pfam_source_dir.glob("*.hmm"):
+            shutil.copy(hmm_file, pfam_dir / hmm_file.name)
+
+    db_source = test_path / "db" / "EP00074_Homo_sapiens.fasta"
+    shutil.copy(db_source, db_dir)
+        
+    # !!!
+    
     dir_manager:DirectoryManager = DirectoryManager(
         output_dir=output_dir,
         results_dir=results_dir,
@@ -46,7 +56,6 @@ def searcher(tmp_path: Path) -> None:
         output_dir=output_dir,
         dir_manager=dir_manager
     );
-
     return searcher;
 
 def test_fixture_creates_output_dir(searcher: PFAMSearcher) -> None:
@@ -54,16 +63,30 @@ def test_fixture_creates_output_dir(searcher: PFAMSearcher) -> None:
     assert searcher.output_dir.is_dir();
 
 def test_already_searched(searcher: PFAMSearcher, tmp_path: Path) -> None:
-    pfam_name = "PF00619";
-    pfam_dir: Path = searcher.output_dir / pfam_name;
 
+    pfam_dir: Path = searcher.output_dir / "CARD" / "PF00619";
+    # print(searcher.output_dir)
     # Manually create the directory to simulate a previous search
     pfam_dir.mkdir(parents=True, exist_ok=True)
-
-    assert searcher._already_searched(pfam_name) is True
+    # print(pfam_dir)
+    assert searcher._already_searched(pfam_dir, "PF00619") is True
     assert pfam_dir.exists()
     assert pfam_dir.is_dir()
 
-# def test_run_searches() -> None:
-#     searcher.run_searches();
+# Assume that hmmersearch works since it's a third party package
+# Only testing to see if the file is written out to the right place
+def test_run_searches(searcher: PFAMSearcher) -> None:
+    searcher.run_searches();
+    result_dir: Path = searcher.output_dir;
+    
+    # test_directories = ["P"]
+    result_dir: Path = searcher.output_dir / "NACHT" / "PF05729";
+    print(result_dir);
+    # result_dir: Path = searcher.output_dir / "CARD" / "PF00619";
+    
+    # run_searches() should be creating the directory
+    # result_dir.mkdir(parents=True, exist_ok=True);
+    assert result_dir.exists();
+    assert result_dir.is_dir();
+
         

@@ -12,8 +12,8 @@ class DirectoryManager:
         for name, path in self.dirs.items():
             path.mkdir(parents=True, exist_ok=True);
     
-    def output_subdir_exists(self, pfam_name: str) -> bool:
-        return (self.dirs["output"] / pfam_name).exists();
+    def output_subdir_exists(self, path:Path, pfam_name: str) -> bool:
+        return path.exists();
     
         
         
