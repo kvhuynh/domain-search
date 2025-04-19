@@ -16,7 +16,7 @@ class PFAMSearcher:
         for folder in hmm_path.iterdir():
             pfam_name = str(folder).split("/")[-1];
             if not self._already_searched(folder, pfam_name):
-                self._run_hmmsearch(file, pfam_name);
+                self._run_hmmsearch(folder, pfam_name);
             # for file in folder.iterdir():
             #     print(file)
             #     if not self._already_searched(pfam_name):
